@@ -2,8 +2,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
 import Login from '../components/Login'
+import { useSession } from "next-auth/client"
 
-export default function Home({ session }) {
+export default function Home() {
+  const [session] = useSession()
   if (!session) return <Login></Login>
 
   return (
