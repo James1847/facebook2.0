@@ -52,7 +52,7 @@ function Header(props) {
       <div className="flex items-center sm:space-x-2 justify-end">
           <Image onClick={signOut} className="rounded-full cursor-pointer" src={session.user.image} width="40" height="40" layout="fixed"></Image>
           
-          <p className="whitespace-normal  font-semibold pr-3">James Bond</p>
+          <p className="whitespace-normal  font-semibold pr-3">{session.user.name}</p>
           <ViewGridIcon className="icon"></ViewGridIcon>
           <ChatIcon className="icon"></ChatIcon>
           <BellIcon className="icon"></BellIcon>
