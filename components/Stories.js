@@ -31,7 +31,7 @@ const stories = [
 
 function Stories() {
     return (
-        <div className="flex justify-center space-x-3 mx-auto">
+        <div className="flex justify-center space-x-3 ">
             {
                 stories.map(
                     (story) => (
