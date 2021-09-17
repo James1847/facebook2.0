@@ -15,8 +15,6 @@ function Sidebar() {
             <SidebarRow Icon={CalendarIcon} title="Events"></SidebarRow>
             <SidebarRow Icon={ClockIcon} title="Memories"></SidebarRow>
             <SidebarRow Icon={ChevronDownIcon} title="See More"></SidebarRow>
-
-
         </div>
     )
 }
