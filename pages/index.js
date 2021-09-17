@@ -3,13 +3,14 @@ import Image from 'next/image'
 import Header from '../components/Header'
 import Login from '../components/Login'
 import { useSession } from "next-auth/client"
+import Sidebar from '../components/Sidebar'
 
 export default function Home() {
   const [session] = useSession()
   if (!session) return <Login></Login>
 
   return (
-    <div>
+    <div className="h-screen bg-gray-100 overflow-hidden">
       <Head>
         <title>Facebook</title>
         <link rel="icon" href="/favicon.ico" />
@@ -17,8 +18,8 @@ export default function Home() {
       <Header>
 
       </Header>
-      <main>
-        {/* Sidebar */}
+      <main className="flex">
+        <Sidebar />
         {/* Feed */}
         {/* Widgets */}
       </main>

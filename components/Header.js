@@ -20,15 +20,8 @@ function Header(props) {
       {/* left */}
       <div className="flex items-center flex-shrink">
         <div className="flex items-center">
-          <Image
-            src="/fb.png"
-            width={40}
-            height={40}
-            alt=""
-            layout="fixed"
-          ></Image>
+          <Image src="/fb.png" width={40} height={40} alt="" layout="fixed"></Image>
         </div>
-    
         <div className="flex ml-2 items-center rounded-full bg-gray-100 p-2">
           <SearchIcon className="h-5 w-5 text-gray-700"></SearchIcon>
           <input
@@ -50,8 +43,7 @@ function Header(props) {
       </div>
 
       <div className="flex items-center sm:space-x-2 justify-end">
-          <Image onClick={signOut} className="rounded-full cursor-pointer" src={session.user.image} width="40" height="40" layout="fixed"></Image>
-          
+          <Image alt="" onClick={signOut} className="rounded-full cursor-pointer" src={session.user.image} width="40" height="40" layout="fixed"></Image>          
           <p className="whitespace-normal  font-semibold pr-3">{session.user.name}</p>
           <ViewGridIcon className="icon"></ViewGridIcon>
           <ChatIcon className="icon"></ChatIcon>
