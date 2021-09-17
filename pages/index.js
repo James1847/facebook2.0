@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Header from '../components/Header'
 import Login from '../components/Login'
 import { useSession } from "next-auth/client"
@@ -12,7 +11,7 @@ export default function Home() {
 
   return (
     <div className="h-screen bg-gray-100 overflow-hidden">
-      <Head>
+      <Head className="flex">
         <title>Facebook</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
