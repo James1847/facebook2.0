@@ -14,7 +14,7 @@ function InputBox() {
         e.preventDefault();
         if (!inputRef.current.value) return;
 
-        db.collection('posts').push(
+        db.collection('posts').add(
             message: '1',
             name: '张三'
         )
