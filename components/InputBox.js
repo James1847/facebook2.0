@@ -3,7 +3,9 @@ import Image from "next/image"
 import { PhotographIcon, VideoCameraIcon, EmojiHappyIcon} from "@heroicons/react/outline"
 import { useRef } from 'react'
 import { db } from "../firebase"
-import FieldValue from "firebase/firestore"
+import { collection, addDoc, Timestamp } from "firebase/firestore"
+
+
 
 
 function InputBox() {
@@ -15,13 +17,21 @@ function InputBox() {
         e.preventDefault();
         if (!inputRef.current.value) return;
 
-        db.collection('posts').add({
+        // db.collection('posts').add({
+        //     message: inputRef.current.value,
+        //     name: session.user.name,
+        //     email: session.user.email,
+        //     image: session.user.image,
+        //     timestamp: FieldValue.serverTimestamp(),
+        // })
+        addDoc(collection(db, "posts"), {
             message: inputRef.current.value,
             name: session.user.name,
             email: session.user.email,
             image: session.user.image,
-            timestamp: FieldValue.serverTimestamp(),
+            timestamp: Timestamp.now(),
         })
+
     };
 
     return (
