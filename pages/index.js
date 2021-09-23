@@ -54,7 +54,7 @@ export async function getStaticProps() {
   // will receive `posts` as a prop at build time
   return {
     props: {
-      realtimePosts: realtimePosts.docs
+      realtimePosts: realtimePosts.docs.map((r) => ({name: r.data().name, email: r.data().email, message: r.data().message, postImage: r.data().postImage, timestamp: r.data().timestamp.toString(), image: r.data().image}))
     },
   }
 }
