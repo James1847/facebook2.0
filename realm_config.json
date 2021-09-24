@@ -1,0 +1,7 @@
+{
+    "app_id": "test-app-uoibu",
+    "config_version": 20210101,
+    "name": "test-app",
+    "location": "US-VA",
+    "deployment_model": "LOCAL"
+}
