@@ -8,13 +8,13 @@ function Sidebar() {
     return (
         <div className="p-2 mt-5 max-w-[600px] xl:min-w-[300px]">
             <SidebarRow src={session.user.image} title={session.user.name}></SidebarRow>
-            <SidebarRow Icon={UsersIcon} title="Friends"></SidebarRow>
-            <SidebarRow Icon={UserGroupIcon} title="Groups"></SidebarRow>
-            <SidebarRow Icon={ShoppingCartIcon} title="Marketplace"></SidebarRow>
-            <SidebarRow Icon={DesktopComputerIcon} title="watch"></SidebarRow>
-            <SidebarRow Icon={CalendarIcon} title="Events"></SidebarRow>
-            <SidebarRow Icon={ClockIcon} title="Memories"></SidebarRow>
-            <SidebarRow Icon={ChevronDownIcon} title="See More"></SidebarRow>
+            <SidebarRow Icon={UsersIcon} title="朋友"></SidebarRow>
+            <SidebarRow Icon={UserGroupIcon} title="群组"></SidebarRow>
+            <SidebarRow Icon={ShoppingCartIcon} title="市场"></SidebarRow>
+            <SidebarRow Icon={DesktopComputerIcon} title="观察"></SidebarRow>
+            <SidebarRow Icon={CalendarIcon} title="事件"></SidebarRow>
+            <SidebarRow Icon={ClockIcon} title="记忆"></SidebarRow>
+            <SidebarRow Icon={ChevronDownIcon} title="更多"></SidebarRow>
         </div>
     )
 }
