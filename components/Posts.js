@@ -4,7 +4,7 @@
 
 import { db } from "../firebase";
 import Post from "./Post";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy, limit } from "firebase/firestore";
 import React from "react";
 
 export default class Posts extends React.Component {
@@ -20,7 +20,7 @@ export default class Posts extends React.Component {
     // Prime an external cache as early as possible.
     // Async requests are unlikely to complete before render anyway,
     // So we aren't missing out by not providing a callback here.
-    getDocs(collection(db, "posts"));
+    getDocs(collection(db, "posts"), orderBy("timestamp", "desc"), limit(100));
   }
 
   componentDidMount() {
@@ -46,11 +46,25 @@ export default class Posts extends React.Component {
 
   render() {
     if (this.state.externalData) {
-      return (
-        <div>
-          <h1>hello</h1>
-        </div>
-      );
+      var posts = [];
+      this.state.externalData.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        posts.push(Object.assign({ id: doc.id }, doc.data()));
+      });
+
+      console.log("posts: ", posts);
+
+      return posts.map((post) => (
+        <Post
+          key={post.id}
+          name={post.name}
+          message={post.message}
+          email={post.email}
+          timestamp={post.timestamp}
+          image={post.image}
+          postImage={post.postImage}
+        />
+      ));
     } else {
       return (
         <div>
