@@ -49,10 +49,11 @@ function InputBox() {
           });
         });
 
-        inputRef.current.value = "";
+        
       } else {
         console.log("no file to upload");
       }
+      inputRef.current.value = "";
     });
   };
 
