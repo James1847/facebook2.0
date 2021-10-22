@@ -6,6 +6,6 @@ module.exports = {
       "platform-lookaside.fbsbx.com",
       "firebasestorage.googleapis.com",
       "avatars.githubusercontent.com",
-    ]
-  }
-}
+    ],
+  },
+};
